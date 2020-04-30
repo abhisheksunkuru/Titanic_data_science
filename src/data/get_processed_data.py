@@ -74,7 +74,7 @@ def fill_missing_value(df):
     df.Age.fillna(title_age_median, inplace=True)
     return df
 def get_deck(cabin):
-    return np.where(pd.notnull(cabin), str(cabin)[0].upper, 'Z')
+    return np.where(pd.notnull(cabin), (str(cabin)[0]).upper(), 'Z')
 
 def reorder_columns(df):
     columns = [column for column in df.columns if column != 'Survived']
